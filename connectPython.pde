@@ -14,18 +14,12 @@ void setup() {
 }
 
 void draw() {
-  try{
-    Client client = server.available();
-  
-    if (client !=null) {
-      String whatClientSaid = client.readString();
-      if (whatClientSaid != null) {
-        println(whatClientSaid); 
-      }
+  Client client = server.available();
+
+  if (client !=null) {
+    String whatClientSaid = client.readString();
+    if (whatClientSaid != null) {
+      println(whatClientSaid); 
     }
-    
-  }catch(Exception e){
-    exit();
   }
- 
 }
